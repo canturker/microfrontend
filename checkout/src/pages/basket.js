@@ -15,7 +15,6 @@ function Basket() {
 
   return (
     <div>
-      <Link to="/">Back</Link>
       <h5>Basket</h5>
       <hr />
       <div>
