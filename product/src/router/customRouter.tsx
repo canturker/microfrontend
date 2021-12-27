@@ -1,7 +1,11 @@
-import { useLayoutEffect } from "react";
+import React, { useLayoutEffect } from "react";
 import { Router } from "react-router-dom";
 
-const CustomRouter = ({ basename, children, history }) => {
+type IProps = {
+  basename?: string;
+  history: any;
+};
+const CustomRouter: React.FC<IProps> = ({ basename, children, history }) => {
   const [state, setState] = React.useState({
     action: history.action,
     location: history.location,

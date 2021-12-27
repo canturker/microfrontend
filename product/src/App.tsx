@@ -8,14 +8,17 @@ import { createBrowserHistory } from "history";
 
 const defaultHistory = createBrowserHistory();
 
-const App = ({ history = defaultHistory }) => {
+type IAppProp = {
+  history: any;
+};
+
+const App: React.FC<IAppProp> = ({ history = defaultHistory }) => {
   return (
     <>
-      <h3>Micro Product List</h3>
       <CustomRouter history={history}>
         <Routes>
-          <Route exact path="/" element={<ProductList />} />
-          <Route exact path="/:id" element={<ProductDetail />} />
+          <Route path="/" element={<ProductList />} />
+          <Route path="/:id" element={<ProductDetail />} />
         </Routes>
       </CustomRouter>
     </>

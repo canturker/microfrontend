@@ -3,6 +3,7 @@ import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
 import CustomRouter from "./router/customRouter";
 import MicroFrontend from "./micro";
 import { createBrowserHistory } from "history";
+import Navbar from "./components/navbar";
 
 const containerHistory = createBrowserHistory();
 
@@ -31,8 +32,7 @@ const Checkout = () => {
 
 const App = () => (
   <CustomRouter history={containerHistory}>
-    <div>Sepetimdeki ürün id: </div>{" "}
-    <Link to={"/checkout/basket"}>Sepetime Git</Link>
+    <Navbar />
     <Routes>
       <Route path="/" element={<Product />} />
       <Route path="/:id" element={<Product />} />

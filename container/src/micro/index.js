@@ -4,6 +4,7 @@ class MicroFrontend extends React.Component {
   componentDidMount() {
     const { name, host, document } = this.props;
     const scriptId = `micro-frontend-script-${name}`;
+    const styleId = `micro-frontend-style-${name}`;
 
     if (document.getElementById(scriptId)) {
       this.renderMicroFrontend();
@@ -13,6 +14,13 @@ class MicroFrontend extends React.Component {
     fetch(`${host}/assets-manifest.json`)
       .then((res) => res.json())
       .then((manifest) => {
+        const style = document.createElement("link");
+        style.id = styleId;
+        style.crossOrigin = "";
+        style.rel = "stylesheet";
+        style.href = `${host}/${manifest["main.css"]}`;
+        document.head.appendChild(style);
+
         const script = document.createElement("script");
         script.id = scriptId;
         script.crossOrigin = "";
