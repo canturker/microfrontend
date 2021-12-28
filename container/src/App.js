@@ -1,45 +1,35 @@
 import React from "react";
 import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
-import CustomRouter from "./router/customRouter";
 import MicroFrontend from "./router/microfrontendRoute";
-import { createBrowserHistory } from "history";
 import Navbar from "./components/navbar";
-
-const containerHistory = createBrowserHistory();
+import HTML from "./components/HTML";
 
 const productHost = "http://localhost:3001";
 const checkoutHost = "http://localhost:3002";
 
-const Product = () => {
+const Product = ({ history }) => {
+  return <MicroFrontend history={history} host={productHost} name="Product" />;
+};
+
+const Checkout = ({ history }) => {
   return (
-    <MicroFrontend
-      history={containerHistory}
-      host={productHost}
-      name="Product"
-    />
+    <MicroFrontend history={history} host={checkoutHost} name="Checkout" />
   );
 };
 
-const Checkout = () => {
-  return (
-    <MicroFrontend
-      history={containerHistory}
-      host={checkoutHost}
-      name="Checkout"
-    />
-  );
-};
-
-const App = () => (
-  <CustomRouter history={containerHistory}>
+const App = ({ history }) => (
+  <HTML>
     <Navbar />
     <Routes>
-      <Route path="/" element={<Product />} />
-      <Route path="/:id" element={<Product />} />
-      <Route path="/checkout/basket" element={<Checkout />} />
-      <Route path="/checkout/payment" element={<Checkout />} />
+      <Route path="/" element={<Product history={history} />} />
+      <Route path="/:id" element={<Product history={history} />} />
+      <Route path="/checkout/basket" element={<Checkout history={history} />} />
+      <Route
+        path="/checkout/payment"
+        element={<Checkout history={history} />}
+      />
     </Routes>
-  </CustomRouter>
+  </HTML>
 );
 
 export default App;

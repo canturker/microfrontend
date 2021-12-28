@@ -1,7 +1,11 @@
 import React from "react";
+import { isServer } from "../helpers/identifier";
 
 class MicroFrontendRoute extends React.Component {
   componentDidMount() {
+    if (isServer()) {
+      return;
+    }
     const { name, host, document } = this.props;
     const scriptId = `micro-frontend-script-${name}`;
     const styleId = `micro-frontend-style-${name}`;
@@ -52,8 +56,8 @@ class MicroFrontendRoute extends React.Component {
 }
 
 MicroFrontendRoute.defaultProps = {
-  document,
-  window,
+  document: isServer() ? {} : document,
+  window: isServer() ? {} : window,
 };
 
 export default MicroFrontendRoute;
