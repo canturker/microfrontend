@@ -1,6 +1,6 @@
 import React from "react";
 
-class MicroFrontend extends React.Component {
+class MicroFrontendRoute extends React.Component {
   componentDidMount() {
     const { name, host, document } = this.props;
     const scriptId = `micro-frontend-script-${name}`;
@@ -51,9 +51,9 @@ class MicroFrontend extends React.Component {
   }
 }
 
-MicroFrontend.defaultProps = {
+MicroFrontendRoute.defaultProps = {
   document,
   window,
 };
 
-export default MicroFrontend;
+export default MicroFrontendRoute;

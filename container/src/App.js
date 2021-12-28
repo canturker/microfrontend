@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
 import CustomRouter from "./router/customRouter";
-import MicroFrontend from "./micro";
+import MicroFrontend from "./router/microfrontendRoute";
 import { createBrowserHistory } from "history";
 import Navbar from "./components/navbar";
 
