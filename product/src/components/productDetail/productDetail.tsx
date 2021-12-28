@@ -28,16 +28,17 @@ const ProductDetailView: React.FC<IProductDetailProps> = ({
 }) => {
   const addToCart = () => {
     const items = window.localStorage.getItem("basket_items");
+    let itemsArray = [];
     if (items) {
-      const itemsArray = JSON.parse(items);
+      itemsArray = JSON.parse(items);
       itemsArray.push(id);
-      window.localStorage.setItem("basket_items", JSON.stringify(itemsArray));
     } else {
-      window.localStorage.setItem("basket_items", `[${id}]`);
+      itemsArray.push(id);
     }
+    window.localStorage.setItem("basket_items", JSON.stringify(itemsArray));
     const addToCart = new CustomEvent("add_to_cart", {
       detail: {
-        items: items || [...id],
+        items: itemsArray || [...id],
         from: "productDetail",
       },
     });

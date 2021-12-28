@@ -7,10 +7,10 @@ const Navbar = () => {
 
   useEffect(() => {
     setBasketItemCount(
-      JSON.parse(window.localStorage.getItem("basket_items")).length
+      JSON.parse(window.localStorage.getItem("basket_items") || "[]").length
     );
     addToCartListener.current = window.addEventListener("add_to_cart", (e) => {
-      setBasketItemCount(JSON.parse(e.detail.items).length);
+      setBasketItemCount(e.detail.items.length);
     });
     return () => {
       window.removeEventListener(addToCartListener.current);
