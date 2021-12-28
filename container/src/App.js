@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
 import MicroFrontend from "./router/microfrontendRoute";
 import Navbar from "./components/navbar";
-import HTML from "./components/HTML";
+import NotFound from "./components/notfound";
 
 const productHost = "http://localhost:3001";
 const checkoutHost = "http://localhost:3002";
@@ -18,7 +18,7 @@ const Checkout = ({ history }) => {
 };
 
 const App = ({ history }) => (
-  <HTML>
+  <>
     <Navbar />
     <Routes>
       <Route path="/" element={<Product history={history} />} />
@@ -28,8 +28,9 @@ const App = ({ history }) => (
         path="/checkout/payment"
         element={<Checkout history={history} />}
       />
+      <Route path="*" element={<NotFound />} />
     </Routes>
-  </HTML>
+  </>
 );
 
 export default App;
