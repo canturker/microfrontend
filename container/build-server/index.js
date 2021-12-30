@@ -156,7 +156,7 @@ module.exports = require("path");
   \*****************************/
 /***/ ((module) => {
 
-eval("module.exports = JSON.parse('{\"main\":{\"js\":\"/container-ce33587ee4e56fc8e7cf.js\"},\"\":{\"html\":\"/index.html\"}}');\n\n//# sourceURL=webpack://@microfrontend/product/./webpack-assets.json?");
+eval("module.exports = JSON.parse('{\"main\":{\"js\":\"/container-29a593bc542dcf3203e9.js\"},\"\":{\"html\":\"/index.html\"}}');\n\n//# sourceURL=webpack://@microfrontend/product/./webpack-assets.json?");
 
 /***/ })
 
