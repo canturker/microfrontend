@@ -10,9 +10,11 @@ const defaultHistory = createBrowserHistory();
 
 type IAppProp = {
   history: any;
+  config: any;
 };
 
-const App: React.FC<IAppProp> = ({ history = defaultHistory }) => {
+const App: React.FC<IAppProp> = ({ history = defaultHistory, config }) => {
+  console.log("PRODUCT", config);
   return (
     <>
       <CustomRouter history={history}>

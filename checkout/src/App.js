@@ -8,7 +8,8 @@ import { createBrowserHistory } from "history";
 
 const defaultHistory = createBrowserHistory();
 
-const App = ({ history = defaultHistory }) => {
+const App = ({ history = defaultHistory, config }) => {
+  console.log("CHECKOUT", config);
   return (
     <>
       <h3>Micro Checkout</h3>

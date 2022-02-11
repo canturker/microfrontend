@@ -5,9 +5,8 @@ import express from "express";
 import App from "../src/App";
 import routes from "./routes";
 import HTML from "../src/components/HTML";
-
-const path = require("path");
-
+import path from "path";
+const request = require("request");
 const PORT = process.env.PORT || 5001;
 const app = express();
 
@@ -15,6 +14,10 @@ app.use("/static", express.static(path.join(__dirname, "../build")));
 
 routes.forEach((route) => {
   app.get(route.path, (req, res) => {
+    const userAgent = req.headers["user-agent"];
+    // if (userAgent) {
+    //   request("http://127.0.0.1:5500/seo/build/index.html").pipe(res);
+    // }
     const html = ReactDOMServer.renderToString(
       <StaticRouter location={req.url}>
         <HTML>

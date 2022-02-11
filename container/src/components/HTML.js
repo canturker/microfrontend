@@ -22,7 +22,7 @@ const HTML = ({ children }) => {
       </head>
       <body>
         <div id="container">{children}</div>
-        <script src={"/static" + STATIC.main.js} />
+        <script src={"http://localhost:5001/static" + STATIC.main.js} />
       </body>
     </html>
   );

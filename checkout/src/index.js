@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 
-window.renderCheckout = (containerId, history) => {
+window.renderCheckout = (containerId, history, config) => {
   ReactDOM.render(
-    <App history={history} />,
+    <App history={history} config={config} />,
     document.getElementById(containerId)
   );
 };

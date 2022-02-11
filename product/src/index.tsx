@@ -9,9 +9,9 @@ declare global {
   }
 }
 
-window.renderProduct = (containerId: string, history: any) => {
+window.renderProduct = (containerId: string, history: any, config: any) => {
   ReactDOM.render(
-    <App history={history} />,
+    <App history={history} config={config} />,
     document.getElementById(containerId)
   );
 };
