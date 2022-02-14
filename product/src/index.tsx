@@ -6,6 +6,7 @@ declare global {
   interface Window {
     renderProduct?: any;
     unmountProduct?: any;
+    localizations: { [key: string]: any };
   }
 }
 

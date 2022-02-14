@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
 import Container from "../components/container/container";
 import ProductCard from "../components/productCard/productCard";
+import ConfigContext from "../contexts/configContext";
 
 type ICharacter = {
   id: string;
@@ -11,8 +11,9 @@ type ICharacter = {
 };
 
 const ProductList: React.FC = () => {
+  const config = useContext(ConfigContext);
   const [characters, setCharacters] = useState<Array<ICharacter>>([]);
-
+  console.log("Config from Context", config);
   useEffect(() => {
     fetch("https://rickandmortyapi.com/api/character")
       .then((res) => res.json())

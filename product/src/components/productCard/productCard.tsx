@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { localize } from "../../helpers/localize";
 import {
   container as containerStyle,
   name as nameStyle,
@@ -38,7 +39,7 @@ const ProductCard: React.FC<IProductCardProps> = ({
       <div className={nameStyle}>{name}</div>
       <div className={statusStyle(status)}>{status}</div>
       <Link className={buttonStyle} to={`/${id}`}>
-        Detail
+        {localize("product.item.detail", "Detail2")}
       </Link>
     </div>
   );

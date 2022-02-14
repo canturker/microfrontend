@@ -3,6 +3,7 @@ import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
 import MicroFrontend from "./router/microfrontendRoute";
 import Navbar from "./components/navbar";
 import NotFound from "./components/notfound";
+import { localizations } from "./helpers/localizations";
 
 const productHost = "http://localhost:3001";
 const checkoutHost = "http://localhost:3002";
@@ -29,9 +30,12 @@ const Checkout = ({ history, config }) => {
   );
 };
 const APP_CONFIG = {
-  API_URL: "ru",
-  PROJECT_LANG: "ru",
+  API_URL: "RU",
+  PROJECT_LANG: "RU",
 };
+
+window.localizations = localizations[APP_CONFIG.PROJECT_LANG];
+
 const App = ({ history }) => (
   <>
     <Navbar />
