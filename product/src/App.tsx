@@ -9,12 +9,17 @@ import { ConfigProvider } from "./contexts/configContext";
 
 const defaultHistory = createBrowserHistory();
 
+const defaultConfig = {};
+
 type IAppProp = {
   history: any;
   config: any;
 };
 
-const App: React.FC<IAppProp> = ({ history = defaultHistory, config }) => {
+const App: React.FC<IAppProp> = ({
+  history = defaultHistory,
+  config = defaultConfig,
+}) => {
   return (
     <>
       <ConfigProvider value={config}>
