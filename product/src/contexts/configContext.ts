@@ -1,6 +1,12 @@
 import React from 'react';
 
-const ConfigContext = React.createContext<{FEATURE_LIST?: {[key: string]: Boolean }}>({});
+export type IConfigContext = {
+    API_URL?:string,
+    PROJECT_LANG?: string,
+    FEATURE_LIST?: {[key: string]: Boolean }
+};
+
+const ConfigContext = React.createContext<IConfigContext>({});
 
 export const ConfigProvider = ConfigContext.Provider;
 

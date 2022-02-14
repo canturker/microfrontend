@@ -5,11 +5,15 @@ import ProductDetail from "./pages/product_detail";
 import ProductList from "./pages/product_list";
 import CustomRouter from "./router/customRouter";
 import { createBrowserHistory } from "history";
-import { ConfigProvider } from "./contexts/configContext";
+import { ConfigProvider, IConfigContext } from "./contexts/configContext";
 
 const defaultHistory = createBrowserHistory();
 
-const defaultConfig = {};
+const defaultConfig: IConfigContext = {
+  FEATURE_LIST: {
+    pizzaHalves: true,
+  },
+};
 
 type IAppProp = {
   history: any;
