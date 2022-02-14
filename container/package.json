@@ -11,6 +11,7 @@
     "dev": "npm-run-all --parallel build dev:*"
   },
   "dependencies": {
+    "dotenv-webpack": "^7.1.0",
     "express": "4.17.2",
     "history": "5.2.0",
     "nodemon": "2.0.15",

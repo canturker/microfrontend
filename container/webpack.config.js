@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const AssetsPlugin = require("assets-webpack-plugin");
 const webpack = require("webpack");
 const path = require("path");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   entry: path.resolve(__dirname, "./src/client.entry.js"),
@@ -29,6 +30,7 @@ module.exports = {
       template: path.resolve(__dirname, "public/index.html"),
     }),
     new AssetsPlugin(),
+    new Dotenv(),
   ],
   devServer: {
     static: path.resolve(__dirname, "build"),

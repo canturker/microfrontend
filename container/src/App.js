@@ -5,7 +5,7 @@ import Navbar from "./components/navbar";
 import NotFound from "./components/notfound";
 import { localizations } from "./helpers/localizations";
 
-const productHost = "http://localhost:3001";
+const productHost = process.env.REACT_APP_PRODUCT_HOST;
 const checkoutHost = "http://localhost:3002";
 
 const Product = ({ history, config }) => {
