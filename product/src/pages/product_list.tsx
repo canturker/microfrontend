@@ -24,6 +24,14 @@ const ProductList: React.FC = () => {
 
   return (
     <Container>
+      {config.FEATURE_LIST?.pizzaHalves && (
+        <ProductCard
+          id={"pizza-halves"}
+          name={"Pizza Halves"}
+          image={""}
+          status={"Alive"}
+        />
+      )}
       {characters.map((character) => (
         <ProductCard
           key={character.id}

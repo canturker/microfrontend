@@ -32,6 +32,9 @@ const Checkout = ({ history, config }) => {
 const APP_CONFIG = {
   API_URL: "RU",
   PROJECT_LANG: "RU",
+  FEATURE_LIST: {
+    pizzaHalves: false,
+  },
 };
 
 window.localizations = localizations[APP_CONFIG.PROJECT_LANG];
