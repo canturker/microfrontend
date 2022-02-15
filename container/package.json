@@ -8,7 +8,9 @@
     "build": "webpack build --config ./webpack.config.js --mode production",
     "dev:build-server": "webpack build --config ./webpack.server.js --mode development -w",
     "dev:start": "nodemon ./build-server/index.js",
-    "dev": "npm-run-all --parallel build dev:*"
+    "dev": "npm-run-all --parallel build dev:*",
+    "prod:build-server": "webpack build --config ./webpack.server.js --mode production",
+    "prod:start": "nodemon ./build-server/index.js"
   },
   "dependencies": {
     "dotenv-webpack": "^7.1.0",

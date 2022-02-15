@@ -37,7 +37,7 @@ const APP_CONFIG = {
   },
 };
 
-window.localizations = localizations[APP_CONFIG.PROJECT_LANG];
+// window.localizations = localizations[APP_CONFIG.PROJECT_LANG];
 
 const App = ({ history }) => (
   <>
