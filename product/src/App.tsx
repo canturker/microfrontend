@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import ProductDetail from "./pages/product_detail";
 import ProductList from "./pages/product_list";
 import CustomRouter from "./router/customRouter";
-import { createBrowserHistory } from "history";
+import { BrowserHistory, createBrowserHistory } from "history";
 import { ConfigProvider, IConfigContext } from "./contexts/configContext";
 
 const defaultHistory = createBrowserHistory();
@@ -16,8 +16,8 @@ const defaultConfig: IConfigContext = {
 };
 
 type IAppProp = {
-  history: any;
-  config: any;
+  history: BrowserHistory;
+  config: IConfigContext;
 };
 
 const App: React.FC<IAppProp> = ({

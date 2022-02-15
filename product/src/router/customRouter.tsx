@@ -1,9 +1,10 @@
+import { BrowserHistory } from "history";
 import React, { useLayoutEffect } from "react";
 import { Router } from "react-router-dom";
 
 type IProps = {
   basename?: string;
-  history: any;
+  history: BrowserHistory;
 };
 const CustomRouter: React.FC<IProps> = ({ basename, children, history }) => {
   const [state, setState] = React.useState({

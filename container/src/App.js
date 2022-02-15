@@ -6,7 +6,7 @@ import NotFound from "./components/notfound";
 import { localizations } from "./helpers/localizations";
 
 const productHost = process.env.PRODUCT_HOST;
-const checkoutHost = "http://localhost:3002";
+const checkoutHost = process.env.CHECKOUT_HOST;
 
 const Product = ({ history, config }) => {
   return (
